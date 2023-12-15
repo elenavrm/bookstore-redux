@@ -13,7 +13,7 @@ This project demonstrates the use of React.js with Redux to manage the state of 
 ***View and manage items in the cart***
 
 ## Technologies Used
-*React.js
-*Redux
-*HTML/CSS
+* *React.js*
+* *Redux*
+* *HTML/CSS*
 
