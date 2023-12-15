@@ -11,7 +11,7 @@ const Cart = () => {
     return (
         <div>
             <img className="cartIcon" src={snitch} alt="golden snitch"/>
-            <h4>TOTAL: ${totalPrice}</h4>
+            <h4>TOTAL: ${totalPrice.toFixed(2)}</h4>
             {cartItems.map(cartItem =>  <CartItem cartItem={cartItem}/>)}
         </div>
     )
