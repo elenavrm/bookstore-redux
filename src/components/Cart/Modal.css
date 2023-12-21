@@ -67,3 +67,9 @@
 .close-btn:hover {
   color: #ab0b0f;
 }
+
+@media screen and (max-width: 768px) {
+   .cart-modal {
+    min-width: 80%;
+   }
+}
