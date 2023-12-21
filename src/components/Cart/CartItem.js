@@ -11,7 +11,7 @@ const dispatch = useDispatch();
         <div>
             <p>{books.name}</p>
             <p>{cartItem.quantity} book(s)</p>
-            <p>Price: ${books.price * cartItem.quantity}</p>
+            <p>Price: ${(books.price * cartItem.quantity).toFixed(2)}</p>
             <span onClick={() => dispatch(removeItemFromCart({cartItemId: cartItem.id}))}>
             <img className="icon" src={deleteIcon} alt="delete icon"/> 
             </span>

@@ -9,7 +9,7 @@ const Books = () => {
         <div>
             {dataBooks
                 .filter(book => {
-                if (selectedCategory === 'ALL') return true;
+                if (selectedCategory === 'ALL BOOKS') return true;
                 return selectedCategory === book.category;
             })
             .map(book => <Book key={book.id} book={book}/>)}

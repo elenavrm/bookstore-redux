@@ -22,12 +22,13 @@
     border: 1px solid gold;
     border-radius: 5px;
     z-index: 1000;
+    min-width: 30%;
     max-width: 80%;
     max-height: 80%;
     overflow-y: auto;
 }
 
-.cart-modal button {
+.btn {
     padding: 10px 15px;
     margin-top: 10px;
     background-color: transparent;
@@ -37,13 +38,14 @@
     cursor: pointer;
   }
   
-  .cart-modal button:hover {
+  .btn:hover {
     background-color: #c09b46;
   }
   
   .cartIcon {
     width: 150px;
     margin-right: 5px;
+    margin-bottom: 0;
   }
 
 .divider {
@@ -51,4 +53,17 @@
     height: 1px; 
     background-color: #c09b46; 
     width: 100%; 
+}
+
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 28px;
+  color: gold;
+}
+
+.close-btn:hover {
+  color: #ab0b0f;
 }

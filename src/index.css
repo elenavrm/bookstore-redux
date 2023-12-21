@@ -24,6 +24,7 @@ hr {
   height: 1px; 
   background-color: gold; 
   width: 100%; 
+  margin-bottom: 20px;
 }
 
 body {
@@ -40,10 +41,6 @@ body {
 img {
   width: 220px;
   border-radius: 7px;
-}
-
-.cartIcon {
-  width: 190px;
 }
 
 .categoryButton:hover {
@@ -97,7 +94,7 @@ h4 {
   color: gold;
 }
 
-button {
+.add-btn {
   background-color: transparent;
   border: 1px solid #bb9644;
   color: #fefefe;
@@ -107,8 +104,33 @@ button {
   margin-left: 10px;
 }
 
+.add-btn:hover {
+  background-color: #c09b46;
+}
+
+.checkout {
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #c09b46;
+  border: 1px solid gold;
+  border-radius: 5px;
+  color: white;
+}
+
 .quantity {
   width: 60px;
-  padding: 5px;
+  margin-bottom: 10px;
+  background-color: transparent;
+  border: 1px solid #c09b46;
+  border-radius: 3px;
+  color: #f9f1d8;
+  font-size: 20px;
+}
+
+.number {
+  color: gold;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 20px;
 }
 

@@ -1,21 +1,26 @@
-const ChangeQuantity = ({ quantity, setQuantity }) => {
-    const addQuantity = () => {
-      setQuantity(quantity + 1);
-    };
-  
-    const removeQuantity = () => {
-      if (quantity <= 1) return;
-      setQuantity(quantity - 1);
-    };
-  
-    return (
-      <div>
-        <button className='quantity' onClick={addQuantity}> + </button>
-        <span> {quantity} </span>
-        <button className='quantity' onClick={removeQuantity}> - </button>
-      </div>
-    );
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { increaseCart, decreaseCart } from '../../redux/cartSlice';
+
+const ChangeQuantity = ({ cartItem }) => {
+  const dispatch = useDispatch();
+
+  const handleIncrease = () => {
+    dispatch(increaseCart({ cartItemId: cartItem.id }));
   };
-  
-  export default ChangeQuantity;
-  
+
+  const handleDecrease = () => {
+    dispatch(decreaseCart({ cartItemId: cartItem.id }));
+  };
+
+
+  return (
+    <div>
+      <button className='quantity' onClick={handleIncrease}> + </button>
+      <span className='number'> {cartItem.quantity} </span>
+      <button className='quantity' onClick={handleDecrease}> - </button>
+    </div>
+  );
+};
+
+export default ChangeQuantity;

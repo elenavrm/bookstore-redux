@@ -1,41 +1,41 @@
-import { useSelector} from 'react-redux';
-import CartItem from './CartItem';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { getCartItems, getTotalPrice } from '../../redux/cartSlice';
-import snitch from './snitch.png';
+import CartItem from './CartItem';
 import ChangeQuantity from './ChangeQuantity';
-import './Modal.css'
-
+import './Modal.css';
 
 const Cart = ({ isOpen, toggleCart }) => {
-
-  
-
   const cartItems = useSelector(getCartItems);
   const totalPrice = useSelector(getTotalPrice);
 
   if (!isOpen) return null;
 
-
   return (
     <div>
       <div className="overlay" onClick={toggleCart} />
       <div className="cart-modal">
-        <img className="cartIcon" src={snitch} alt="golden snitch" />
+        <div className="close-btn" onClick={toggleCart}>
+          <span>&times;</span>
+        </div>
+        <h1>Your Cart</h1>
         <hr className='divider' />
-        <h4>YOUR TOTAL: ${totalPrice.toFixed(2)}</h4>
+        <h4>GRAND TOTAL: ${totalPrice.toFixed(2)}</h4>
         <hr className='divider' />
-        
+
         {cartItems.map((cartItem) => (
-          
           <div key={cartItem.id}>
-            <CartItem key={cartItem.id} cartItem={cartItem} />
+            <CartItem cartItem={cartItem} />
             <div>
-            <ChangeQuantity quantity={cartItem.quantity}/>
+              <ChangeQuantity cartItem={cartItem} />
             </div>
           </div>
-          
         ))}
-        <button onClick={toggleCart}>CONTINUE SHOPPING</button>
+
+        <button className='btn' onClick={toggleCart}>CONTINUE SHOPPING</button>
+        <div>
+          <button className='checkout'>CHECKOUT</button>
+        </div>
       </div>
     </div>
   );
