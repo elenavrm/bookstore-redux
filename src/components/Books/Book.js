@@ -1,22 +1,35 @@
-import { useDispatch } from "react-redux";
-import { addItemToCart } from "../../redux/cartSlice";
-import ChangeQuantity from "../Cart/ChangeQuantity";
-import { useState } from "react";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addItemToCart } from '../../redux/cartSlice';
 
-const Book = ({book}) => {
-    const [quantity, setQuantity] = useState(1);
-    const dispatch = useDispatch();
+import Cart from '../Cart/Cart'; 
 
-    return (
-        <div>
-            <img src={book.img} alt='book cover'/>
-            <h2>{book.name}</h2>
-            <h3 className="price">$ {book.price.toFixed(2)}</h3>
-            <ChangeQuantity quantity={quantity} setQuantity={setQuantity} />
-            <button onClick={() => {dispatch(addItemToCart({book, quantity}))}}>ADD TO CART</button>
-            
-        </div>
-    )
-}
+
+const Book = ({ book }) => {
+  const [quantity, setQuantity] = useState(1);
+  const [isCartOpen, setIsCartOpen] = useState(false); 
+  const dispatch = useDispatch();
+
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen);
+  };
+
+  return (
+    <div>
+      <img src={book.img} alt="book cover" />
+      <h2>{book.name}</h2>
+      <h3 className="price">$ {book.price.toFixed(2)}</h3>
+      
+      <button onClick={() => { dispatch(addItemToCart({ book, quantity })); toggleCart(); }}>
+        ADD TO CART
+      </button>
+
+      <Cart isOpen={isCartOpen} toggleCart={toggleCart} />
+    </div>
+  );
+};
 
 export default Book;
+
+
+

@@ -12,16 +12,24 @@ code {
     monospace;
 }
 
+
 .App {
   display: flex;
-  justify-content:center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+hr {
+  border: none; 
+  height: 1px; 
+  background-color: gold; 
+  width: 100%; 
 }
 
 body {
   background-color: #000000;
   color: #fefefe;
 }
-
 
 .block {
   background-color: transparent;
@@ -52,7 +60,7 @@ img {
 }
 
 .icon {
-  width: 90px;
+  width: 70px;
 }
 
 h1, h2 {
@@ -103,31 +111,4 @@ button {
   width: 60px;
   padding: 5px;
 }
-
-@media screen and (max-width: 768px) {
-  .App {
-    flex-direction: column-reverse; 
-    align-items: center; 
-  }
-
-  .block {
-    margin-top: 20px;
-  }
-
-  .categoryButton {
-    margin: 5px 0; 
-  }
-
-  h1 {
-    font-size: 35px;
-  }
-
-  h2 {
-    font-size: 25px;
-  }
-
-}
-
-
-
 

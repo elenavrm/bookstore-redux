@@ -12,7 +12,7 @@ const Books = () => {
                 if (selectedCategory === 'ALL') return true;
                 return selectedCategory === book.category;
             })
-            .map(book => <Book book={book}/>)}
+            .map(book => <Book key={book.id} book={book}/>)}
         </div>
     )
 }

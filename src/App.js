@@ -7,15 +7,15 @@ import './index.css';
 function App() {
   
   return (
+
     <div className="App">
-    <div className='block'>
-    <h1> Hogwarts Library </h1>
-      <Books />
-    </div>
-    <div className='block'>
     <AllCategories />
+    <hr/>
+
     <Cart />
-    </div>
+    
+      <Books />
+
     </div>
   );
 }
