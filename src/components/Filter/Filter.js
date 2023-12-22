@@ -4,7 +4,6 @@ import { filterCategory, getSelectedCategory } from "../../redux/booksSlice";
 const Filter = ({category}) => {
     const dispatch = useDispatch();
 
-
     const selectedCategory = useSelector(getSelectedCategory)
     return (
         <div>
@@ -13,4 +12,5 @@ const Filter = ({category}) => {
         </div>
     )
 }
+
 export default Filter;

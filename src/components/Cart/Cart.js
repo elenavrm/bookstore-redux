@@ -20,22 +20,31 @@ const Cart = ({ isOpen, toggleCart }) => {
         </div>
         <h1>Your Cart</h1>
         <hr className='divider' />
-        <h4>GRAND TOTAL: ${totalPrice.toFixed(2)}</h4>
-        <hr className='divider' />
 
-        {cartItems.map((cartItem) => (
-          <div key={cartItem.id}>
-            <CartItem cartItem={cartItem} />
-            <div>
-              <ChangeQuantity cartItem={cartItem} />
-            </div>
+        {cartItems.length === 0 ? (
+          <h4>Your Cart Is Empty...</h4>
+        ) : (
+          <div>
+            <h4>GRAND TOTAL: ${totalPrice.toFixed(2)}</h4>
+            <hr className='divider' />
+
+            {cartItems.map((cartItem) => (
+              <div key={cartItem.id}>
+                <CartItem cartItem={cartItem} />
+                <div>
+                  <ChangeQuantity cartItem={cartItem} />
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+        )}
 
         <button className='btn' onClick={toggleCart}>CONTINUE SHOPPING</button>
-        <div>
-          <button className='checkout'>CHECKOUT</button>
-        </div>
+        {cartItems.length !== 0 && (
+          <div>
+            <button className='checkout'>CHECKOUT</button>
+          </div>
+        )}
       </div>
     </div>
   );

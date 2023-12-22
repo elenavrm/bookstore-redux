@@ -1,8 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import dataBooks from '../data/dataBooks';
 
-
-
 export const slice = createSlice({
     name: 'cart',
     initialState: {
@@ -40,11 +38,11 @@ export const slice = createSlice({
             if (existingCartItem) {
                 if (existingCartItem.quantity > 1) {
                     existingCartItem.quantity -= 1;
-                    // Accessing the book data to update totalPrice
+                    // accessing the book data to update totalPrice
                     const book = dataBooks.find((item) => item.id === existingCartItem.bookId);
                     existingCartItem.totalPrice = book.price * existingCartItem.quantity;
                 } else {
-                    // If quantity is 1 or less, remove the item
+                    // remove item if quantity is 1 or less
                     state.cartItems = state.cartItems.filter(
                         (cartItem) => cartItem.id !== action.payload.cartItemId
                     );
